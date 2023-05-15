@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prefav2sale_prefav2sale,prefav2sale.prefav2sale,model_prefav2sale_prefav2sale,base.group_user,1,1,1,1

@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <!-- Extensión de la vista de orden de venta -->
+        <record model="ir.ui.view" id="view_sale_order_form_inherit">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//header" position="inside">
+                        <button name="action_prefacturation" string="Prefacturar" type="action" class="btn-secondary"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <!-- Vista de prefacturación -->
+        <record id="view_prefacturation_form" model="ir.ui.view">
+            <field name="name">prefacturation.form</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!-- Define los campos y diseño de la vista de prefacturación aquí -->
+                    <sheet>
+                        <!-- Agrega aquí los campos que deseas mostrar en la vista de prefacturación -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acción para prefacturar la orden de venta -->
+        <record id="action_prefacturation" model="ir.actions.act_window">
+            <field name="name">Prefacturación</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_prefacturation_form"/>
+            <field name="target">current</field>
+            <field name="context">{'default_state': 'prefacturated'}</field>
+        </record>
+    </data>
+</odoo>
+
+
+
+

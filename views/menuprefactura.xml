@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <!-- Menú para la vista de prefacturación -->
+        <record id="menu_sale_prefacturation" model="ir.ui.menu">
+            <field name="name">Prefacturación</field>
+            <field name="action" ref="action_prefacturation"/>
+            <field name="parent_id" ref="sale.menu_sale_order"/>
+            <field name="sequence" type="int">10</field>
+        </record>
+    </data>
+</odoo>
